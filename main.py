@@ -1,5 +1,3 @@
-from src.table import Table
-from src.table import Seat
 from src.utils import Generate_list
 from src.openspace import OpenSpace
 
