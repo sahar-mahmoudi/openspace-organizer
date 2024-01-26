@@ -22,5 +22,5 @@ if __name__ == "__main__":
     # Display the results
     open_space.display()
 
-    # Store the seating arrangement in an Excel file
+    # Store the seating arrangement in a text file
     open_space.store('organize_room.txt')
