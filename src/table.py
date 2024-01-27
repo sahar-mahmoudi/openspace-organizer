@@ -1,3 +1,4 @@
+from src.utils import get_user
 class Seat:
     """
     A class representing a seat in the open space
@@ -105,15 +106,18 @@ class Table:
     capacity_left()
         Return the number of available seats at the table"""
 
-    def __init__(self, capacity=4):   #capacity= How many seats has a table 
+    def __init__(self, capacity=None):   #capacity= How many seats has a table 
         """Initialize a table with a specified capacity.Defualt is 4
         
         Parameters
         ----------
         capacity : int, optional
             How many seats the table has (default is 4)"""
+            
+        if capacity is None:
+            capacity=get_user(default=4,prompt="Please enter the number of seats for each table: ")
 
-        self.capacity = capacity   #It is an integer
+        self.capacity =capacity  #It is an integer
         self.seats = [Seat() for _ in range(capacity)]  #which is a list of Seat objects (size = capacity)
         
 
