@@ -99,3 +99,13 @@ class OpenSpace:
                     occupant_info = seat.occupant if not seat.free else 'Empty'
                     txtfile.write(f"  Seat {j}: {occupant_info}\n")
 
+    def add_colleague(self, name):
+        """Add a person to the open space by assigning them to an available seat"""
+
+        for table in self.tables:
+            if table.assign_seat(name):
+                print(f"{name} has been assigned to a seat")
+                return True
+
+        print(f"No available seats to assign {name}.")
+        return False 
